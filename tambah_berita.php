@@ -4,7 +4,7 @@ include 'crudbasic/koneksi.php';
 $judul_berita = $_POST['judul_berita'];
 $isi_berita = $_POST['isi_berita'];
 // $gambar_berita = $_POST['gambar_berita'];
-// twa
+// tes
 
 if (isset($_POST['proses'])) {
     $direktori = "berkas/";
