@@ -14,9 +14,18 @@ if (isset($_POST['proses'])) {
     move_uploaded_file($_FILES['gambar_berita']['tmp_name'], $direktori . $file_name);
 
 
-    $query = mysqli_query($koneksi, "INSERT INTO berita (judul_berita, isi_berita,gambar_berita) VALUES ('$judul_berita','$isi_berita', '$file_name')");
+    $query = mysqli_query($koneksi, "INSERT INTO berit (judul_berita, isi_berita,gambar_berita) VALUES ('$judul_berita','$isi_berita', '$file_name')");
 
 
-
-    echo "<b>file berhsil di uploade";
+    if ($query) {
+        echo "<b>file berhsil di uploade";
+        header("location:dashboard.php?page=manajemen_berita");
+    } else {
+?>
+        <script type="text/javascript">
+            alert("Hapus Data Gagal.");
+            window.location = 'dashboard.php?page=manajemen_berita'
+        </script>
+<?php
+    }
 }

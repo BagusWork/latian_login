@@ -363,7 +363,10 @@ if (!isset($_SESSION['username'])) {
 
                         <ul class="treeview-menu">
                             <li class="<?= $active ?>"><a href="dashboard.php?page=beranda"><i class="fa fa-circle-o"></i> Beranda</a></li>
-                            <li class="<?= $active1 ?>"><a href="dashboard.php?page=manajemen_user"><i class="fa fa-circle-o"></i> Manajemen_User</a></li>
+                            //proses 
+                            <?php if ($_SESSION['level'] == 1) { ?>
+                                <li class="<?= $active1 ?>"><a href="dashboard.php?page=manajemen_user"><i class="fa fa-circle-o"></i> Manajemen_User</a></li>
+                            <?php } ?>
                             <li class="<?= $active2 ?>"><a href="dashboard.php?page=manajemen_berita"><i class="fa fa-circle-o"></i>Manajemen Berita</a></li>
                         </ul>
                     </li>

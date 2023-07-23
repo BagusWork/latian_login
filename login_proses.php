@@ -16,11 +16,15 @@ if (empty($username)  || empty($password)) {
     $sql1 = "select * from user where username = '$username' and password='$password'";
     $q1 = mysqli_query($koneksi, $sql1);
     $r1 = mysqli_fetch_array($q1);
+    // ?> <pre> <?php
+    // print_r($r1);
+    // die();
 
     if (!empty($r1['username'])) {
         // print_r($r1);
         // die;
         $_SESSION['username'] = $r1['username'];
+        $_SESSION['level'] = $r1['level'];
         header("location:dashboard.php?page=beranda");
     } else {
         echo '<script language="javascript">';

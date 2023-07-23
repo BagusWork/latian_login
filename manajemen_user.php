@@ -1,3 +1,17 @@
+ <?php
+    //jika session level berisi bukan 1 (maka akan di tolak)
+    if ($_SESSION['level'] != 1) {
+        // header("Location: login.php", true);
+    ?>
+     <script type="text/javascript">
+         window.location = 'dashboard.php?page=beranda'
+     </script>
+ <?php
+        echo "a";
+    }
+    ?>
+ <!-- hanya sampai sini jika bukan 1 -->
+
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
      <!-- Content Header (Page header) -->
